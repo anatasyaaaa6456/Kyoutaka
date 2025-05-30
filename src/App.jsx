@@ -8,12 +8,7 @@ export default function App() {
   const [chatLog, setChatLog] = useState([]);
   const [commentInput, setCommentInput] = useState("");
   const [comments, setComments] = useState([]);
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0
-  });
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [playMusic, setPlayMusic] = useState(false);
 
   // Countdown to January 5, 2035
@@ -365,18 +360,8 @@ export default function App() {
               <section className="max-w-xl mx-auto pt-10">
                 <h2 className="text-2xl font-bold mb-4">Kontak Saya</h2>
                 <ul className="space-y-2">
-                  <li>
-                    📱 WhatsApp:{" "}
-                    <a href="https://wa.me/6288980963797"  className="text-red-400 hover:underline">
-                      +62 889-8096-3797
-                    </a>
-                  </li>
-                  <li>
-                    📧 Email:{" "}
-                    <a href="mailto:jahraatasya@gmail.com" className="text-red-400 hover:underline">
-                      jahraatasya@gmail.com
-                    </a>
-                  </li>
+                  <li>📱 WhatsApp: <a href="https://wa.me/6288980963797"  className="text-red-400 hover:underline">+62 889-8096-3797</a></li>
+                  <li>📧 Email: <a href="mailto:jahraatasya@gmail.com" className="text-red-400 hover:underline">jahraatasya@gmail.com</a></li>
                 </ul>
               </section>
             )}
@@ -406,7 +391,6 @@ export default function App() {
                   <input
                     value={chatInput}
                     onChange={(e) => setChatInput(e.target.value)}
-                    onKeyPress={(e) => e.key === "Enter" && handleSendMessage()}
                     placeholder="Tulis pesan..."
                     className="flex-1 p-2 bg-gray-900 border border-gray-700 rounded focus:outline-none"
                   />
@@ -440,7 +424,6 @@ export default function App() {
                   <input
                     value={commentInput}
                     onChange={(e) => setCommentInput(e.target.value)}
-                    onKeyPress={(e) => e.key === "Enter" && handleAddComment()}
                     placeholder="Tinggalkan komentar..."
                     className="flex-1 p-2 bg-gray-900 border border-gray-700 rounded focus:outline-none"
                   />
@@ -461,7 +444,7 @@ export default function App() {
                   href="https://whatsapp.com/channel/0029VbALx58E50UfOE5c0C2b" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block mt-4 px-6 py-2 bg-green-500 text-white rounded-full hover:bg-green-600 transition"
+                  className="inline-block mt-4 px-6 py-2 btn-green rounded-full hover:bg-green-600 transition"
                 >
                   Join ke Saluran
                 </a>
@@ -471,29 +454,10 @@ export default function App() {
 
           {/* Footer */}
           <footer className="p-6 text-center border-t border-red-900 mt-12 text-gray-500">
-            <p>&copy; 2025 Andhika Januar Pratama | Powered by Perasaanku padamu 💗</p>
+            <p>&copy; 2025 Andhika Januar Pratama | Powered by Perasaanku padamu ❤️</p>
           </footer>
-        </div>
+        </>
       )}
     </>
-  );
-}
-
-// Loading Screen Component
-function LoadingScreen() {
-  return (
-    <div className="fixed inset-0 bg-black flex flex-col items-center justify-center z-50">
-      <div className="text-center">
-        <div className="relative w-24 h-24 mb-6">
-          <div className="absolute top-0 left-0 w-full h-full rounded-full border-4 border-red-600 border-t-transparent animate-spin"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-red-400 text-2xl">⚡</div>
-        </div>
-        <h1 className="text-3xl font-bold text-red-400 mb-2">KEZZ LOADING...</h1>
-        <div className="w-64 h-2 bg-gray-800 rounded-full overflow-hidden">
-          <div className="h-full bg-gradient-to-r from-red-500 to-purple-500 animate-pulse"></div>
-        </div>
-        <p className="mt-4 text-sm text-gray-400">Mengaktifkan sistem...</p>
-      </div>
-    </div>
   );
 }
