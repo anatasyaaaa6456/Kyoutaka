@@ -137,7 +137,19 @@ export default function App() {
   return (
     <>
       {isLoading ? (
-        <LoadingScreen />
+        <div className="fixed inset-0 bg-black flex flex-col items-center justify-center z-50">
+          <div className="text-center">
+            <div className="relative w-24 h-24 mb-6">
+              <div className="absolute top-0 left-0 w-full h-full rounded-full border-4 border-red-600 border-t-transparent animate-spin"></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-red-400 text-2xl">⚡</div>
+            </div>
+            <h1 className="text-3xl font-bold text-red-400 mb-2">KEZZ LOADING...</h1>
+            <div className="w-64 h-2 bg-gray-800 rounded-full overflow-hidden">
+              <div className="h-full bg-gradient-to-r from-red-500 to-purple-500 animate-pulse"></div>
+            </div>
+            <p className="mt-4 text-sm text-gray-400">Mengaktifkan sistem...</p>
+          </div>
+        </div>
       ) : (
         <div className="min-h-screen bg-black text-white font-sans overflow-hidden">
           {/* Neon Glow CSS */}
@@ -255,8 +267,6 @@ export default function App() {
                   <p className="mb-4">
                     Aku tidak terlalu suka dengan rutinitas yang membosankan,
                     dan selalu mencari cara untuk membuat hidupku lebih menarik dan menyenangkan.
-                    Aku percaya bahwa dengan memiliki sikap yang santai dan positif,
-                    kita dapat menghadapi tantangan hidup dengan lebih baik.
                   </p>
                   <p className="text-red-400">
                     Jadi, jika kamu ingin tahu lebih tentang aku,
@@ -461,7 +471,7 @@ export default function App() {
 
           {/* Footer */}
           <footer className="p-6 text-center border-t border-red-900 mt-12 text-gray-500">
-            <p>&copy; 2025 Andhika Januar Pratama | Powered by Perasaanku padamu ❤️</p>
+            <p>&copy; 2025 Andhika Januar Pratama | Powered by Perasaanku padamu 💗</p>
           </footer>
         </div>
       )}
